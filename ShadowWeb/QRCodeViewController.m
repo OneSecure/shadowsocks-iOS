@@ -9,7 +9,6 @@
 @implementation QRCodeViewController {
     QRCodeViewControllerReturnBlock returnBlock;
     UIView *cameraView;
-    ZXCapture *capture;
     UIButton *cancelButton;
     BOOL stopped;
 }
@@ -24,10 +23,6 @@
 }
 
 - (void)viewDidLoad {
-    capture = [[ZXCapture alloc] init];
-    capture.rotation = 90.0f;
-    capture.camera = capture.back;
-    capture.layer.frame = self.view.bounds;
     cameraView = [[UIView alloc] initWithFrame:self.view.bounds];
     cameraView.autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
             UIViewAutoresizingFlexibleBottomMargin |
@@ -36,22 +31,8 @@
             UIViewAutoresizingFlexibleWidth |
             UIViewAutoresizingFlexibleHeight);
     cameraView.backgroundColor = [UIColor blackColor];
-    [cameraView.layer addSublayer:capture.layer];
     [self.view addSubview:cameraView];
-    capture.delegate = self;
-    
-#if !TARGET_IPHONE_SIMULATOR
-    AVCaptureDevice *currentDevice = capture.captureDevice;
-    if ([currentDevice isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]){
-        NSError *error = nil;
-        [currentDevice lockForConfiguration:&error];
-        if (!error) {
-            [currentDevice setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
-            [currentDevice unlockForConfiguration];
-        }
-    }
-#endif
-    
+
     cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 44 - 10, 20, 44, 44)];
     [cancelButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
@@ -59,18 +40,7 @@
 }
 
 - (void)cancel {
-    [capture stop];
     [self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)captureResult:(ZXCapture *)_capture result:(ZXResult *)result {
-    if (result && !stopped) {
-        stopped = YES;
-        [capture stop];
-        [self dismissModalViewControllerAnimated:YES];
-        returnBlock([result text]);
-    }
-
 }
 
 @end
