@@ -32,7 +32,7 @@ size_t encryption_iv_len[] = {
         16
 };
 
-const char *shadowsocks_encryption_names[] = {
+const char *shadowsocks_encryption_names[kShadowsocksMethods] = {
         "table",
         "rc4-md5",
         "salsa20",
@@ -202,7 +202,8 @@ void cleanup_encryption(struct encryption_ctx *ctx) {
 
 void config_encryption(const char *password, const char *method) {
     SSLeay_add_all_algorithms();
-    sodium_init();
+    int i = sodium_init();
+    i=i;
     _method = encryption_method_from_string(method);
     if (_method == ENCRYPTION_TABLE) {
         get_table((unsigned char *) password);

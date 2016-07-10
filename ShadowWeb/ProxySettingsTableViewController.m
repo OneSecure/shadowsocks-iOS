@@ -59,8 +59,7 @@
     self.navigationItem.rightBarButtonItem = done;
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = cancel;
-    self.navigationItem.title = _L(Proxy
-    Settings);
+    self.navigationItem.title = _L(Proxy Settings);
 
     self.contentSizeForViewInPopover = CGSizeMake(320, 400);
     // Uncomment the following line to preserve selection between presentations.

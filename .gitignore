@@ -4,3 +4,14 @@ shadowsocks.xcodeproj/project.xcworkspace/
 shadowsocks.xcodeproj/xcuserdata/
 .DS_STORE
 *.dmg
+
+OpenSSL-for-iPhone/
+AppProxyCap/
+GCDWebServer/
+iProxy/
+NSData-Base64/
+GZIP/
+Masonry/
+AFNetworking/
+libsodium-ios/
+

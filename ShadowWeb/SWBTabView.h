@@ -23,7 +23,7 @@
     UIActivityIndicatorView *indicatorView;
 }
 
-@property (nonatomic, assign) BOOL focused;
+@property (nonatomic, assign) BOOL isFocused;
 @property (nonatomic, weak) id<SWBTabViewDelegate> delegate;
 @property (nonatomic, strong) IBOutlet NSString *title;
 @property (nonatomic, assign) BOOL loading;

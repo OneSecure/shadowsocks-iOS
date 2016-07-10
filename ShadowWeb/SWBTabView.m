@@ -13,7 +13,7 @@
 
 @synthesize delegate;
 @synthesize title;
-@synthesize focused;
+@synthesize isFocused;
 //@synthesize percentage;
 @synthesize loading;
 
@@ -156,7 +156,7 @@
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0 };
     if(self.highlighted) {
-        if (self.focused) {
+        if (self.isFocused) {
             CGFloat components[8] = {
                 kTabViewFocusedHighlightedGradTopColor, kTabViewFocusedHighlightedGradTopColor, kTabViewFocusedHighlightedGradTopColor, 1.0,
                 kTabViewFocusedHighlightedGradBottomColor, kTabViewFocusedHighlightedGradBottomColor, kTabViewFocusedHighlightedGradBottomColor, 1.0 };
@@ -171,7 +171,7 @@
             myGradient = CGGradientCreateWithColorComponents (myColorspace, components,
                                                               locations, num_locations);
         }
-    } else if (self.focused) {
+    } else if (self.isFocused) {
         CGFloat components[8] = {
             kTabViewFocusedGradTopColor, kTabViewFocusedGradTopColor, kTabViewFocusedGradTopColor, 1.0,
             kTabViewFocusedGradBottomColor, kTabViewFocusedGradBottomColor, kTabViewFocusedGradBottomColor, 1.0 };
@@ -215,7 +215,7 @@
     // draw top white line
     
     CGContextSetLineWidth(context, 1);
-    if (self.focused) {
+    if (self.isFocused) {
         CGContextSetRGBStrokeColor(context, 0.99, 0.99, 0.99, 1);
     } else {
         CGContextSetRGBStrokeColor(context, 0.6, 0.6, 0.6, 1);
@@ -245,8 +245,8 @@
     }
 }
 
--(void)setFocused:(BOOL)newFocused {
-    focused = newFocused;
+-(void)setIsFocused:(BOOL)newFocused {
+    isFocused = newFocused;
     [self setNeedsDisplay];
 }
 

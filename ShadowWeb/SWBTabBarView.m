@@ -485,7 +485,7 @@
             if (tab == currentTab) {
                 for (SWBTabView *tabView in tabViews) {
                     if (tabView.tag == tab.tag) {
-                        tabView.focused = NO;
+                        tabView.isFocused = NO;
                         break;
                     }
                 }
@@ -493,7 +493,7 @@
                 //            SWBTabView *tabViewFound = nil;
                 for (SWBTabView *tabView in tabViews) {
                     if (tabView.tag == tab.tag) {
-                        tabView.focused = YES;
+                        tabView.isFocused = YES;
                         //                    tabViewFound = tabView;
                         break;
                     }
