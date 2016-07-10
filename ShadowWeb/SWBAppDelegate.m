@@ -24,6 +24,7 @@ void polipo_exit();
     BOOL polipoRunning;
     BOOL polipoEnabled;
     NSURL *ssURL;
+    GCDWebServer *webServer;
 }
 
 - (void)updateProxyMode {
@@ -53,7 +54,7 @@ void polipo_exit();
 //    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updatePolipo) userInfo:nil repeats:YES];
 
     NSData *pacData = [[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"proxy" withExtension:@"pac.gz"]] gunzippedData];
-    GCDWebServer *webServer = [[GCDWebServer alloc] init];
+    webServer = [[GCDWebServer alloc] init];
     [webServer addHandlerForMethod:@"GET" path:@"/proxy.pac" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest *request) {
              return [GCDWebServerDataResponse responseWithData:pacData contentType:@"application/x-ns-proxy-autoconfig"];
 
