@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) SWBViewController *viewController;
+@property (weak, nonatomic) SWBViewController *rootViewController;
 
 @property (nonatomic, strong) SWBNetworkActivityIndicatorManager *networkActivityIndicatorManager;
 
