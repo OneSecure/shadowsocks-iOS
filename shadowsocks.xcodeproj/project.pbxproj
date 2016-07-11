@@ -151,7 +151,6 @@
 		EB1897A04CF0382A754FE700 /* SWBConfigWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1895348E32ABA4F4F86742 /* SWBConfigWindowController.m */; };
 		EB1899E6974F61B38B2FFD2C /* ProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1892B5027A6B1F1E2CDC12 /* ProfileManager.m */; };
 		EB189A01F66776EC1714F32D /* 3gnet_enable.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = EB1897A8F80969EC7477F89D /* 3gnet_enable.mobileconfig */; };
-		EB189DBA13C945ADF838DF2C /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1892CE8806A5E5632B5714 /* QRCodeViewController.m */; };
 		EB189E4CAA0DEF020070DC84 /* SWBAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB189EE1CF6E8C6C431B87BA /* SWBAboutController.m */; };
 		EB189E8C8B1866196A4DA43B /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB1891FD08E70E9E9DC84AFD /* about.txt */; };
 		EB189FE30A2E13F4D10D59ED /* SWBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = EB189ABF1BF9729F1E0E8F72 /* SWBApplication.m */; };
@@ -475,12 +474,10 @@
 		A23B54CB1D327A8E00221FDC /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		A23B54CC1D327A8E00221FDC /* sodium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sodium.h; sourceTree = "<group>"; };
 		A23B54CE1D327A8E00221FDC /* libsodium.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsodium.a; sourceTree = "<group>"; };
-		EB189069EF341E65B5414D00 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		EB189071407B3A2A9B4C83CB /* ProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileManager.h; sourceTree = "<group>"; };
 		EB1891B68FCBD841C5E461B6 /* About.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = About.md; sourceTree = SOURCE_ROOT; };
 		EB1891FD08E70E9E9DC84AFD /* about.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
 		EB1892B5027A6B1F1E2CDC12 /* ProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileManager.m; sourceTree = "<group>"; };
-		EB1892CE8806A5E5632B5714 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		EB18942F05960F64CC059413 /* SimpleTableViewSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewSource.h; sourceTree = "<group>"; };
 		EB1895348E32ABA4F4F86742 /* SWBConfigWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBConfigWindowController.m; sourceTree = "<group>"; };
 		EB1895847BCC9ED701A0C8CB /* SWBAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBAboutController.h; sourceTree = "<group>"; };
@@ -845,8 +842,6 @@
 				628693F416DA2817008B1A26 /* ProxySettingsTableViewController.m */,
 				EB1897832237B71EF50B3DF4 /* SimpleTableViewSource.m */,
 				EB18942F05960F64CC059413 /* SimpleTableViewSource.h */,
-				EB1892CE8806A5E5632B5714 /* QRCodeViewController.m */,
-				EB189069EF341E65B5414D00 /* QRCodeViewController.h */,
 				EB1897A89055A4C2CFD81AF8 /* ShadowsocksRunner.m */,
 				EB189E412781A71BA967EECE /* ShadowsocksRunner.h */,
 			);
@@ -1331,7 +1326,6 @@
 				62D85AB1176DA6FC00FE5575 /* util.c in Sources */,
 				EB189E4CAA0DEF020070DC84 /* SWBAboutController.m in Sources */,
 				A23B54771D324E4E00221FDC /* GCDWebServerConnection.m in Sources */,
-				EB189DBA13C945ADF838DF2C /* QRCodeViewController.m in Sources */,
 				A23B54791D324E4E00221FDC /* GCDWebServerRequest.m in Sources */,
 				A23B54761D324E4E00221FDC /* GCDWebServer.m in Sources */,
 				A23B54781D324E4E00221FDC /* GCDWebServerFunctions.m in Sources */,

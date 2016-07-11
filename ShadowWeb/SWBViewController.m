@@ -7,7 +7,6 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
-#import "QRCodeViewController.h"
 #import "SWBViewController.h"
 #import "ShadowsocksRunner.h"
 #import "ProxySettingsTableViewController.h"
@@ -276,21 +275,13 @@
 
 #pragma mark - ActionSheet
 
-- (void)initActionSheet {
+- (void) initActionSheet {
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:_L(Cancel) destructiveButtonTitle:nil otherButtonTitles:_L(New
     Tab), _L(Back), _L(Forward), _L(Reload), _L(Settings), _L(Config via QRCode), _L(Help), _L(About), nil];
     [_actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    QRCodeViewController *qrCodeViewController = [[QRCodeViewController alloc] initWithReturnBlock:^(NSString *code) {
-        if (code) {
-            NSURL *URL = [NSURL URLWithString:code];
-            if (URL) {
-                [[UIApplication sharedApplication] openURL:URL];
-            }
-        }
-    }];
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
             [self openLinkInNewTab:kNewTabAddress];
@@ -310,7 +301,7 @@
             [self showSettings];
             break;
         case 5:
-            [self presentModalViewController:qrCodeViewController animated:YES];
+            NSLog(@"removed it!!");
             break;
         case 6:
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/shadowsocks/shadowsocks-iOS/wiki/Help"]];
